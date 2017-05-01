@@ -1,0 +1,24 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MENU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FOOD" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name" use="required" />
+              <xs:element type="xs:string" name="price" use="required" />
+              <xs:element type="xs:string" name="description" use="required" />
+			  <xs:SimpleType>
+			  <xs:restriction base="xs:string">
+			  <xs:maxLength value="140" />
+			  <xs:minLength value="2" />
+			  </xs:restriction>
+			  </xs:SimpleType>
+              <xs:element type="xs:short" name="calories" use="required" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
